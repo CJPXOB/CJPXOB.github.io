@@ -3,56 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caitlin & Osman </title>
+  <title>Caitlin & Osman — Wedding Invitation</title>
+
+  <!-- Tailwind CDN for simple layout and spacing -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+    }
+    h1, h2 {
+      font-weight: normal;
+    }
+  </style>
 </head>
 
-<body class="bg-rose-50 text-gray-800 font-sans">
-  <!-- Header -->
-  <header class="text-center py-20 bg-gradient-to-b from-rose-100 to-rose-50">
-    <h1 class="text-5xl md:text-6xl font-serif mb-4">Caitlin & Ahmed</h1>
-    <p class="text-lg md:text-xl italic">are getting married!</p>
-  </header>
-
-  <!-- Details -->
-  <section class="max-w-2xl mx-auto text-center py-16 px-6">
-    <h2 class="text-3xl font-semibold mb-4">Wedding Details</h2>
-    <p class="text-lg mb-2">📅 <strong>Date:</strong> Saturday, May 24, 2025</p>
-    <p class="text-lg mb-2">📍 <strong>Ceremony:</strong> Islington Town Hall, London</p>
-    <p class="text-lg mb-6">🍽️ <strong>Reception:</strong> Café Deco, London</p>
-    <p class="text-md leading-relaxed">
-      We are so excited to celebrate our marriage with our closest family and friends. 
-      The day will begin with a small, intimate Nikkah ceremony followed by a cozy vegan dinner 
-      reception. Please join us for good food, laughter, and a relaxed evening together.
+<body class="flex items-center justify-center min-h-screen px-6">
+  <main class="text-center max-w-2xl mx-auto py-16">
+    <h1 class="text-5xl mb-10">Caitlin & Osman</h1>
+    
+    <p class="text-lg leading-relaxed mb-8">
+      Saturday, May 30th, 2026<br>
+      At Islington Town Hall, Richmond Suite<br>
+      Upper St, London N1 2UD<br>
+      Eleven thirty o’clock in the morning
     </p>
-  </section>
 
-  <!-- Schedule -->
-  <section class="bg-white py-12 px-6 text-center">
-    <h2 class="text-2xl font-semibold mb-6">Schedule</h2>
-    <ul class="space-y-3 text-lg">
-      <li>🕌 2:00 PM — Nikkah Ceremony at Islington Town Hall</li>
-      <li>☕ 4:00 PM — Afternoon gathering at Café Deco</li>
-      <li>🍰 6:00 PM — Dinner and celebration</li>
-    </ul>
-  </section>
-
-  <!-- RSVP -->
-  <section class="text-center py-16 px-6 bg-rose-100">
-    <h2 class="text-3xl font-semibold mb-4">RSVP</h2>
-    <p class="mb-6 text-lg">
-      Kindly let us know if you’ll be joining us by April 15th.
+    <p class="text-lg leading-relaxed mb-8">
+      Following later is a dinner reception at Café Deco<br>
+      43 Store St, London WC1E 7DB<br>
+      Six o’clock in the evening
     </p>
-    <a href="mailto:your-email@example.com" 
-       class="bg-rose-500 hover:bg-rose-600 text-white font-medium py-3 px-6 rounded-full">
-       Email Your RSVP
-    </a>
-  </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-10 text-sm text-gray-600">
-    <p>Caitlin Jakusz Paridy & Osman Bari</p>
-  </footer>
+    <hr class="border-black my-8">
+
+    <h2 class="text-2xl mb-4">RSVP</h2>
+    <p class="mb-6 text-md">
+      Please fill out the form below to let us know if you’ll be joining us.
+    </p>
+
+    <!-- Google Form Embed -->
+    <div class="w-full">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/EXAMPLE_FORM_ID/viewform?embedded=true"
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </main>
 </body>
-
 </html>
