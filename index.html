@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caitlin & Osman — Wedding Invitation</title>
 
-  <!-- Tailwind for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -13,14 +12,29 @@
       background-color: white;
       color: black;
       font-family: "Times New Roman", Times, serif;
+      overflow: hidden; /* prevents scrollbars during animation */
     }
     h1, h2 {
       font-weight: normal;
     }
+
+    /* bouncing image style */
+    #cocktail {
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      width: 60px;
+      height: auto;
+      z-index: 50;
+      pointer-events: none; /* prevents clicking interference */
+    }
   </style>
 </head>
 
-<body class="flex justify-center min-h-screen px-6">
+<body class="flex justify-center min-h-screen px-6 relative">
+  <!-- Bouncing Cocktail Glass -->
+  <img id="cocktail" src="cocktail.png" alt="Cocktail Glass">
+
   <main class="max-w-2xl w-full py-16">
     <h1 class="text-5xl mb-10">Caitlin & Osman</h1>
     
@@ -40,30 +54,61 @@
     <hr class="border-black my-8">
 
     <h2 class="text-2xl mb-4">RSVP</h2>
-    <p class="text-md mb-4">
-    </p>
-    <a 
-      href="https://docs.google.com/spreadsheets/d/EXAMPLE_SHEET_ID/edit?usp=sharing" 
-      class="text-red-700 underline hover:text-red-900"
-      target="_blank"
-      rel="noopener noreferrer">
+	<p class="mb-6 text-md">
+      Please fill out the form below to let us know if you’ll be joining us.
+    </p>    
+	<p class="text-md mb-4">
       RSVP
-    </a>
-    </div>
-
-    <hr class="border-black my-8">
-
-    <h2 class="text-2xl mb-4">Registry</h2>
-    <p class="text-md mb-4">
     </p>
     <a 
       href="https://docs.google.com/spreadsheets/d/EXAMPLE_SHEET_ID/edit?usp=sharing" 
       class="text-blue-700 underline hover:text-blue-900"
       target="_blank"
       rel="noopener noreferrer">
-      View Our Registry
+      Registry
     </a>
   </main>
+
+    <hr class="border-black my-8">
+
+    <h2 class="text-2xl mb-4">Registry</h2>
+    <p class="text-md mb-4">
+      Registry List
+    </p>
+    <a 
+      href="https://docs.google.com/spreadsheets/d/EXAMPLE_SHEET_ID/edit?usp=sharing" 
+      class="text-blue-700 underline hover:text-blue-900"
+      target="_blank"
+      rel="noopener noreferrer">
+      Registry
+    </a>
+  </main>
+
+  <script>
+    // Simple bouncing animation for the cocktail glass
+    const cocktail = document.getElementById("cocktail");
+    let x = 50, y = 50;
+    let dx = 2, dy = 2;
+    const speed = 1; // adjust for faster or slower movement
+
+    function animate() {
+      const w = window.innerWidth - cocktail.offsetWidth;
+      const h = window.innerHeight - cocktail.offsetHeight;
+
+      x += dx * speed;
+      y += dy * speed;
+
+      if (x <= 0 || x >= w) dx = -dx;
+      if (y <= 0 || y >= h) dy = -dy;
+
+      cocktail.style.left = x + "px";
+      cocktail.style.top = y + "px";
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
 
